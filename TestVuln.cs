@@ -1,6 +1,6 @@
 // TestVuln.cs - Vulnerable code for SAST demo
 using System;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 
 public class VulnerableClass
 {
