@@ -1,5 +1,7 @@
 # Demo: Análisis SAST con PumaScan en .NET 🔍
 
+> 🌐 **[English version available here](README_EN.md)**
+
 Este proyecto demuestra cómo usar **PumaScan** para detectar vulnerabilidades de seguridad en código .NET, específicamente **inyección SQL**.
 
 ## 🎯 Objetivo
@@ -16,7 +18,7 @@ Mostrar cómo PumaScan detecta automáticamente vulnerabilidades de seguridad du
 ### Opción 1: Usar el script automatizado
 
 ```powershell
-.\scan.ps1
+powershell -ExecutionPolicy Bypass -File .\scan.ps1
 ```
 
 ### Opción 2: Manualmente
@@ -25,6 +27,8 @@ Mostrar cómo PumaScan detecta automáticamente vulnerabilidades de seguridad du
 cd PumaScanner
 dotnet build
 ```
+
+> **Nota**: Si tienes problemas de permisos con PowerShell, usa el comando completo con `-ExecutionPolicy Bypass`.
 
 ## 📝 ¿Qué detecta?
 
@@ -80,7 +84,7 @@ git clone https://github.com/TU-USUARIO/dotnet-sast-pumascan-demo.git
 cd dotnet-sast-pumascan-demo
 
 # Ejecutar análisis
-.\scan.ps1
+powershell -ExecutionPolicy Bypass -File .\scan.ps1
 ```
 
 ## 🔍 Detalles Técnicos
@@ -90,6 +94,42 @@ cd dotnet-sast-pumascan-demo
 - **Tipo de Análisis**: SAST (Static Application Security Testing)
 - **Vulnerabilidad**: CWE-89 (SQL Injection)
 - **Regla**: SEC0107
+
+## 📁 Estructura del Proyecto
+
+```
+dotnet-sast-pumascan-demo/
+├── PumaScanner/               # Proyecto .NET con PumaScan
+│   ├── PumaScanner.csproj    # Configuración con Puma.Security.Rules
+│   ├── TestVuln.cs           # ⚠️ Código VULNERABLE (para demo)
+│   └── SecureExample.cs      # ✅ Código SEGURO (para comparación)
+├── scan.ps1                   # Script de análisis automatizado
+├── README.md                  # Documentación del proyecto (Español)
+├── README_EN.md              # Documentación del proyecto (English)
+├── ARTICLE_GUIDE.md          # Guía completa para tu artículo
+├── READY_FOR_PUBLISH.md      # Checklist de publicación (Español)
+└── READY_FOR_PUBLISH_EN.md   # Checklist de publicación (English)
+```
+
+## 🎯 Salida Esperada
+
+Cuando ejecutes el scan, deberías ver:
+
+```
+======================================
+ PumaScan - SAST Security Analysis
+======================================
+
+warning SEC0107: SQL Injection - ADO.NET method is passed a dynamic SQL statement.
+(https://www.pumascan.com/rules/#sec0107-sql-injection-ado-net)
+
+======================================
+ Analysis Complete!
+======================================
+
+Look for security warnings above:
+  - SEC0107: SQL Injection vulnerability
+```
 
 ---
 

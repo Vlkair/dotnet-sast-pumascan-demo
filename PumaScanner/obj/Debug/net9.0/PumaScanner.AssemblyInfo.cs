@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PumaScanner")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e65ff377ca2d7744b91c3a852ada305d59e4abe4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b7cff58a24cdf405293278b07871d91c3b4ada5")]
 [assembly: System.Reflection.AssemblyProductAttribute("PumaScanner")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PumaScanner")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
